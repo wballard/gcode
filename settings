@@ -1,0 +1,189 @@
+[fb]  firmware build            438.02
+[fv]  firmware version            0.97
+[hp]  hardware platform           1.00
+[hv]  hardware version            8.00
+[id]  TinyG ID                    3X3566-HJH
+[ja]  junction acceleration     nan mm
+[ct]  chordal tolerance              nan mm
+[sl]  soft limit enable           0
+[st]  switch type                 1 [0=NO,1=NC]
+[mt]  motor idle timeout          0.10 Sec
+[ej]  enable json mode            0 [0=text,1=JSON]
+[jv]  json verbosity              0 [0=silent,1=footer,2=messages,3=configs,4=linenum,5=verbose]
+[js]  json serialize style        0 [0=relaxed,1=strict]
+[tv]  text verbosity              0 [0=silent,1=verbose]
+[qv]  queue report verbosity      0 [0=off,1=single,2=triple]
+[sv]  status report verbosity     0 [0=off,1=filtered,2=verbose]
+[si]  status interval             0 ms
+[ec]  expand LF to CRLF on TX     0 [0=off,1=on]
+[ee]  enable echo                 0 [0=off,1=on]
+[ex]  enable flow control         1 [0=off,1=XON/XOFF, 2=RTS/CTS]
+[baud] USB baud rate              5 [1=9600,2=19200,3=38400,4=57600,5=115200,6=230400]
+[net] network mode                0 [0=master]
+[gpl] default gcode plane         0 [0=G17,1=G18,2=G19]
+[gun] default gcode units mode    1 [0=G20,1=G21]
+[gco] default gcode coord system  0 [1-6 (G54-G59)]
+[gpa] default gcode path control  0 [0=G61,1=G61.1,2=G64]
+[gdi] default gcode distance mode 0 [0=G90,1=G91]
+[1ma] m1 map to axis              1 [0=X,1=Y,2=Z...]
+[1sa] m1 step angle               1.800 deg
+[1tr] m1 travel per revolution   40.0000 mm
+[1mi] m1 microsteps               8 [1,2,4,8]
+[1po] m1 polarity                 1 [0=normal,1=reverse]
+[1pm] m1 power management         2 [0=disabled,1=always on,2=in cycle,3=when moving]
+[2ma] m2 map to axis              1 [0=X,1=Y,2=Z...]
+[2sa] m2 step angle               1.800 deg
+[2tr] m2 travel per revolution   40.0000 mm
+[2mi] m2 microsteps               8 [1,2,4,8]
+[2po] m2 polarity                 0 [0=normal,1=reverse]
+[2pm] m2 power management         2 [0=disabled,1=always on,2=in cycle,3=when moving]
+[3ma] m3 map to axis              0 [0=X,1=Y,2=Z...]
+[3sa] m3 step angle               1.800 deg
+[3tr] m3 travel per revolution   40.0000 mm
+[3mi] m3 microsteps               8 [1,2,4,8]
+[3po] m3 polarity                 1 [0=normal,1=reverse]
+[3pm] m3 power management         1 [0=disabled,1=always on,2=in cycle,3=when moving]
+[4ma] m4 map to axis              2 [0=X,1=Y,2=Z...]
+[4sa] m4 step angle               1.800 deg
+[4tr] m4 travel per revolution    8.0000 mm
+[4mi] m4 microsteps               8 [1,2,4,8]
+[4po] m4 polarity                 0 [0=normal,1=reverse]
+[4pm] m4 power management         3 [0=disabled,1=always on,2=in cycle,3=when moving]
+[xam] x axis mode                 1 [standard]
+[xvm] x velocity maximum       1000 mm/min
+[xfr] x feedrate maximum        600 mm/min
+[xtn] x travel minimum            0.000 mm
+[xtm] x travel maximum         1130.000 mm
+[xjm] x jerk maximum            100 mm/min^3 * 1 million
+[xjh] x jerk homing             100 mm/min^3 * 1 million
+[xjd] x junction deviation        0.0500 mm (larger is faster)
+[xsn] x switch min                3 [0=off,1=homing,2=limit,3=limit+homing]
+[xsx] x switch max                2 [0=off,1=homing,2=limit,3=limit+homing]
+[xsv] x search velocity         500 mm/min
+[xlv] x latch velocity          100 mm/min
+[xlb] x latch backoff             5.000 mm
+[xzb] x zero backoff              1.000 mm
+[yam] y axis mode                 1 [standard]
+[yvm] y velocity maximum       1000 mm/min
+[yfr] y feedrate maximum        600 mm/min
+[ytn] y travel minimum            0.000 mm
+[ytm] y travel maximum         2680.000 mm
+[yjm] y jerk maximum            100 mm/min^3 * 1 million
+[yjh] y jerk homing             100 mm/min^3 * 1 million
+[yjd] y junction deviation        0.0500 mm (larger is faster)
+[ysn] y switch min                3 [0=off,1=homing,2=limit,3=limit+homing]
+[ysx] y switch max                2 [0=off,1=homing,2=limit,3=limit+homing]
+[ysv] y search velocity         500 mm/min
+[ylv] y latch velocity          100 mm/min
+[ylb] y latch backoff             5.000 mm
+[yzb] y zero backoff              1.000 mm
+[zam] z axis mode                 1 [standard]
+[zvm] z velocity maximum        400 mm/min
+[zfr] z feedrate maximum        400 mm/min
+[ztn] z travel minimum            0.000 mm
+[ztm] z travel maximum          110.000 mm
+[zjm] z jerk maximum              1 mm/min^3 * 1 million
+[zjh] z jerk homing               1 mm/min^3 * 1 million
+[zjd] z junction deviation        0.0500 mm (larger is faster)
+[zsn] z switch min                1 [0=off,1=homing,2=limit,3=limit+homing]
+[zsx] z switch max                1 [0=off,1=homing,2=limit,3=limit+homing]
+[zsv] z search velocity         400 mm/min
+[zlv] z latch velocity          100 mm/min
+[zlb] z latch backoff             5.000 mm
+[zzb] z zero backoff              1.000 mm
+[aam] a axis mode                 0 [disabled]
+[avm] a velocity maximum        nan deg/min
+[afr] a feedrate maximum        nan deg/min
+[atn] a travel minimum              nan deg
+[atm] a travel maximum              nan deg
+[ajm] a jerk maximum            nan deg/min^3 * 1 million
+[ajh] a jerk homing             nan deg/min^3 * 1 million
+[ajd] a junction deviation           nan deg (larger is faster)
+[ara] a radius value                 nan deg
+[asn] a switch min                0 [0=off,1=homing,2=limit,3=limit+homing]
+[asx] a switch max                0 [0=off,1=homing,2=limit,3=limit+homing]
+[asv] a search velocity         nan deg/min
+[alv] a latch velocity          nan deg/min
+[alb] a latch backoff               nan deg
+[azb] a zero backoff                nan deg
+[bam] b axis mode                 0 [disabled]
+[bvm] b velocity maximum        nan deg/min
+[bfr] b feedrate maximum        nan deg/min
+[btn] b travel minimum              nan deg
+[btm] b travel maximum              nan deg
+[bjm] b jerk maximum            nan deg/min^3 * 1 million
+[bjd] b junction deviation           nan deg (larger is faster)
+[bra] b radius value                 nan deg
+[cam] c axis mode                 0 [disabled]
+[cvm] c velocity maximum        nan deg/min
+[cfr] c feedrate maximum        nan deg/min
+[ctn] c travel minimum              nan deg
+[ctm] c travel maximum              nan deg
+[cjm] c jerk maximum            nan deg/min^3 * 1 million
+[cjd] c junction deviation           nan deg (larger is faster)
+[cra] c radius value                 nan deg
+[p1frq] pwm frequency               nan Hz
+[p1csl] pwm cw speed lo             nan RPM
+[p1csh] pwm cw speed hi             nan RPM
+[p1cpl] pwm cw phase lo             nan [0..1]
+[p1cph] pwm cw phase hi             nan [0..1]
+[p1wsl] pwm ccw speed lo            nan RPM
+[p1wsh] pwm ccw speed hi            nan RPM
+[p1wpl] pwm ccw phase lo            nan [0..1]
+[p1wph] pwm ccw phase hi            nan [0..1]
+[p1pof] pwm phase off               nan [0..1]
+[g54x] g54 x offset                 nan mm
+[g54y] g54 y offset                 nan mm
+[g54z] g54 z offset                 nan mm
+[g54a] g54 a offset                 nan deg
+[g54b] g54 b offset                 nan deg
+[g54c] g54 c offset                 nan deg
+[g55x] g55 x offset                 nan mm
+[g55y] g55 y offset                 nan mm
+[g55z] g55 z offset                 nan mm
+[g55a] g55 a offset                 nan deg
+[g55b] g55 b offset                 nan deg
+[g55c] g55 c offset                 nan deg
+[g56x] g56 x offset                 nan mm
+[g56y] g56 y offset                 nan mm
+[g56z] g56 z offset                 nan mm
+[g56a] g56 a offset                 nan deg
+[g56b] g56 b offset                 nan deg
+[g56c] g56 c offset                 nan deg
+[g57x] g57 x offset                 nan mm
+[g57y] g57 y offset                 nan mm
+[g57z] g57 z offset                 nan mm
+[g57a] g57 a offset                 nan deg
+[g57b] g57 b offset                 nan deg
+[g57c] g57 c offset                 nan deg
+[g58x] g58 x offset                 nan mm
+[g58y] g58 y offset                 nan mm
+[g58z] g58 z offset                 nan mm
+[g58a] g58 a offset                 nan deg
+[g58b] g58 b offset                 nan deg
+[g58c] g58 c offset                 nan deg
+[g59x] g59 x offset                 nan mm
+[g59y] g59 y offset                 nan mm
+[g59z] g59 z offset                 nan mm
+[g59a] g59 a offset                 nan deg
+[g59b] g59 b offset                 nan deg
+[g59c] g59 c offset                 nan deg
+[g92x] g92 x offset               0.000 mm
+[g92y] g92 y offset               0.000 mm
+[g92z] g92 z offset               0.000 mm
+[g92a] g92 a offset               0.000 deg
+[g92b] g92 b offset               0.000 deg
+[g92c] g92 c offset               0.000 deg
+[g28x] g28 x position             0.000 mm
+[g28y] g28 y position             0.000 mm
+[g28z] g28 z position             0.000 mm
+[g28a] g28 a position             0.000 deg
+[g28b] g28 b position             0.000 deg
+[g28c] g28 c position             0.000 deg
+[g30x] g30 x position             0.000 mm
+[g30y] g30 y position             0.000 mm
+[g30z] g30 z position             0.000 mm
+[g30a] g30 a position             0.000 deg
+[g30b] g30 b position             0.000 deg
+[g30c] g30 c position             0.000 deg
+ 
