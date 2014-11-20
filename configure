@@ -1,8 +1,8 @@
 $st=1
 $mt=0.1
 $tv=1
-$qv=2
-$sv=1
+$qv=1
+$sv=2
 
 $gpl=0
 $gun=1
@@ -12,21 +12,21 @@ $1sa=1.8
 $1tr=40
 $1mi=8
 $1po=1
-$1pm=0
+$1pm=2
 
 $2ma=1
 $2sa=1.8
 $2tr=40
 $2mi=8
 $2po=0
-$2pm=0
+$2pm=2
 
 $3ma=0
 $3sa=1.8
 $3tr=40
 $3mi=8
 $3po=1
-$3pm=0
+$3pm=1
 
 $4ma=2
 $4sa=1.8
@@ -35,24 +35,24 @@ $4mi=8
 $4po=0
 $4pm=0
 
-$xvm=1000
-$xfr=500
+$xvm=6000
+$xfr=1000
 $xtm=1130
 $xjm=100
 $xjh=100
 $xsn=3
 $xsx=2
 
-$yvm=1000
-$yfr=500
+$yvm=6000
+$yfr=1000
 $ytm=2680
 $yjm=100
 $yjh=100
 $ysn=3
 $ysx=2
 
-$zvm=200
-$zfr=200
+$zvm=500
+$zfr=500
 $ztm=110
 $zjm=1
 $zjh=1
