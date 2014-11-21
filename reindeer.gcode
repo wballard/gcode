@@ -4,7 +4,7 @@ G1 Z25.4 F2540      ; Move to clearance level
 
 ;
 ; Operation:    0
-; Name:         
+; Name:
 ; Type:         Engrave
 ; Paths:        26
 ; Direction:    Conventional
@@ -2056,7 +2056,7 @@ G1 X259.7559 Y-836.5221
 G1 X258.3497 Y-836.5203
 G1 X258.3497 Y-836.5203
 ; Retract
-G1 Z25.4000 F2540
+G0 Z25.4000
 
 ; Path 1
 ; Rapid to initial position
@@ -7902,7 +7902,7 @@ G1 Z0.0000
 ; plunge
 G1 Z-3.1750 F100
 ; cut
-G1 X253.6713 Y-659.3360 F300
+G1 X253.6713 Y-659.3360 F500
 G1 X255.8486 Y-659.2357
 G1 X257.9944 Y-659.1303
 G1 X259.0549 Y-659.0756
@@ -43114,4 +43114,4 @@ G1 X223.2952 Y-114.4542
 G1 X223.1878 Y-114.6482
 G1 X223.0681 Y-114.8375
 ; Retract
-G1 Z25.4000 F2540
+G0 Z25.4000
