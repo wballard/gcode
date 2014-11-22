@@ -35,23 +35,23 @@ $4mi=8
 $4po=0
 $4pm=0
 
-$xvm=6000
+$xvm=11000
 $xfr=1000
 $xtm=1130
-$xjm=100
-$xjh=100
+$xjm=50
+$xjh=50
 $xsn=3
 $xsx=2
 
-$yvm=6000
+$yvm=11000
 $yfr=1000
 $ytm=2680
-$yjm=100
-$yjh=100
+$yjm=50
+$yjh=50
 $ysn=3
 $ysx=2
 
-$zvm=500
+$zvm=1000
 $zfr=500
 $ztm=110
 $zjm=1
