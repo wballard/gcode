@@ -60,9 +60,13 @@ $zsn=1
 $zsx=0
 
 
-$p1frq=5000
+$p1frq=1000
 $p1csl=0
-$p1csh=10000
+$p1csh=12000
 $p1cpl=0
 $p1cph=1
+$p1wsl=0
+$p1wsh=12000
+$p1wpl=0
+$p1wph=1
 $p1pof=0
