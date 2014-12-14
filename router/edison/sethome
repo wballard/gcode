@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+echo 'g28.3x0y0z0' > /dev/ttyUSB0
