@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-echo 'g28.2x0y0' > /dev/ttyUSB0'
+echo 'g28.2x0y0' > /dev/ttyUSB0
