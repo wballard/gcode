@@ -1,2 +1,0 @@
-#!/usr/bin/env sh
-miniterm.py --port=/dev/ttyUSB0 --baud=115200 --xonxoff
