@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+cat $1 > /dev/ttyUSB0 &
+tail -f /dev/ttyUSB0
+
