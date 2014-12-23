@@ -4,7 +4,7 @@ $st=0
 $mt=0.1
 $tv=1
 $qv=1
-$sv=2
+$sv=1
 
 $gpl=0
 $gun=1
