@@ -80,3 +80,9 @@ Dpad is fine motion on the gantry.
           @halt()
           @move.x = '-1'
           @signalMove true
+
+
+Home the machine.
+
+        @controller.on 'psxButton:press', =>
+          @emit 'home'
