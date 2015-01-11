@@ -8,19 +8,19 @@ table driven since we need to move on all axes simultaneously.
         xTable =
           'halt': ''
           '+': "X#{tinyg.maxX or 2000}"
-          '-': "X0"
+          '-': "X-#{tinyg.maxX or 2000}"
           '1': "X#{step}"
           '-1': "X-#{step}"
         yTable =
           'halt': ''
           '+': "Y#{tinyg.maxY or 3000}"
-          '-': "Y0"
+          '-': "Y-#{tinyg.maxY or 3000}"
           '1': "Y#{step}"
           '-1': "Y-#{step}"
         zTable =
           'halt': ''
           '+': "Z#{tinyg.maxZ or 300}"
-          '-': "Z0"
+          '-': "Z-#{tinyg.maxZ or 300}"
           '1': "Z#{step}"
           '-1': "Z-#{step}"
         if command.x is command.y is command.z is 'halt'

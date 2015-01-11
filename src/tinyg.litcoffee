@@ -55,8 +55,10 @@ to dispatch commands.
 
     tinyg.command ee: 0
     tinyg.command ec: 0
-    tinyg.command jv: 0
+    tinyg.command jv: 5
 
     jogControl = new Jog()
     jogControl.on 'move', require('./commands/move.litcoffee')(tinyg)
+    jogControl.on 'sethome', require('./commands/sethome.litcoffee')(tinyg)
     jogControl.on 'home', require('./commands/home.litcoffee')(tinyg)
+    jogControl.on 'spindle', require('./commands/spindle.litcoffee')(tinyg)

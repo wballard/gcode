@@ -11,6 +11,7 @@ Two speeds seems like enough, so this is a threshold.
     module.exports = class Jog extends events.EventEmitter
 
       halt: ->
+        @spindle = 0
         @move =
           x: 'halt'
           y: 'halt'
@@ -81,8 +82,19 @@ Dpad is fine motion on the gantry.
           @move.x = '-1'
           @signalMove true
 
-
 Home the machine.
 
         @controller.on 'psxButton:press', =>
           @emit 'home'
+
+        @controller.on 'select:press', =>
+          @emit 'sethome'
+
+Toggle the spindle.
+
+        @controller.on 'start:press', =>
+          if @spindle
+            @spindle = 0
+          else
+            @spindle = 100
+          @emit 'spindle', @spindle
