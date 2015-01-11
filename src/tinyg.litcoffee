@@ -15,28 +15,64 @@
 
     """
 
-    fs = require 'fs'
-    path = require 'path'
+    _ = require 'lodash-node'
     events = require 'events'
     serialport = require 'serialport'
     require 'colors'
     {docopt} = require 'docopt'
     {exec} = require 'child_process'
     options = docopt doc
-    console.log options
     Jog = require './jog.litcoffee'
+
+
+    connect = ->
+      console.log 'connected to tinyg'.green
+      tinyg.state =
+        qr: 0
+        sr:
+          posx: 0
+          posy: 0
+          posz: 0
+          vel: 0
+
+Listen to tinyg, this will get the state.
+
+      tinyg.on 'data', (data) ->
+        try
+          feedback = JSON.parse data
+          _.extend tinyg.state, feedback
+          console.log tinyg.state
+        catch e
+          console.error "#{e}".red
+
+Set up for JSON verbose mode.
+
+      tinyg.command ee: 0
+      tinyg.command ec: 0
+      tinyg.command jv: 5
+      tinyg.command gc: "M5"
+
+Joystick jog control.
+
+      jogControl = new Jog()
+      jogControl.on 'move', require('./commands/move.litcoffee')(tinyg)
+      jogControl.on 'sethome', require('./commands/sethome.litcoffee')(tinyg)
+      jogControl.on 'home', require('./commands/home.litcoffee')(tinyg)
+      jogControl.on 'spindle', require('./commands/spindle.litcoffee')(tinyg)
+
+Application start here, mostly to allow bypassing the serial port for some light
+testing.
 
     if options['<tinyg-serial-port>'] isnt '-'
       tinyg = new serialport.SerialPort options['<tinyg-serial-port>'],
         baudRate: 115200
         parser: serialport.parsers.readline("\n")
+      tinyg.on 'open', connect
     else
       tinyg = new events.EventEmitter()
       tinyg.write = (data) ->
         process.stdout.write data.blue
-
-    tinyg.on 'data', (data) ->
-      console.log data.green
+      setTimeout connect
 
 We're going to use JSON object control, so tack on some handy methods
 to dispatch commands.
@@ -52,13 +88,3 @@ to dispatch commands.
 
     tinyg.reset = ->
       tinyg.write '\u0018'
-
-    tinyg.command ee: 0
-    tinyg.command ec: 0
-    tinyg.command jv: 5
-
-    jogControl = new Jog()
-    jogControl.on 'move', require('./commands/move.litcoffee')(tinyg)
-    jogControl.on 'sethome', require('./commands/sethome.litcoffee')(tinyg)
-    jogControl.on 'home', require('./commands/home.litcoffee')(tinyg)
-    jogControl.on 'spindle', require('./commands/spindle.litcoffee')(tinyg)

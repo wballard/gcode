@@ -21,6 +21,7 @@
     "colors": "^1.0.3",
     "docopt": "^0.4.1",
     "dualshock-controller": "^0.6.7",
+    "lodash-node": "^2.4.1",
     "serialport": "^1.4.10"
   }
 }
