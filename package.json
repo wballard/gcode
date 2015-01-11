@@ -20,6 +20,7 @@
     "coffee-script": "^1.8.0",
     "colors": "^1.0.3",
     "docopt": "^0.4.1",
-    "dualshock-controller": "^0.6.7"
+    "dualshock-controller": "^0.6.7",
+    "serialport": "^1.4.10"
   }
 }
