@@ -4,3 +4,4 @@ Send the machine home.
       ->
         tinyg.command gc: 'G90'
         tinyg.command gc: 'G0X0Y0Z0'
+        tinyg.command md: ''
