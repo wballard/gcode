@@ -44,7 +44,7 @@ void loop()
       status.setPixelColor(i, 0, 0, 0);
     }
     
-    if (fire || 1) {
+    if (fire) {
       status.setPixelColor(blinkCycle, 255, 0, 0);
     }
     
