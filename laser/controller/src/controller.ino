@@ -35,19 +35,16 @@ void loop()
     if (blinkCycle == PIXELS) {
       blinkCycle = 1;
     }
-    
-    //fun! color rotation
-    status.setPixelColor(0, 255 / blinkCycle, 0, 255);
-    
-    //rest of the light are a laser marquee
-    for (int i = 1; i < PIXELS; i++) {
-      status.setPixelColor(i, 0, 0, 0);
+
+    for (int i = 0; i < PIXELS; i++) {
+      status.setPixelColor(i, 0, 0, 255);
     }
-    
+
+    //firing marqee
     if (fire) {
       status.setPixelColor(blinkCycle, 255, 0, 0);
     }
-    
+
     status.show();
   }
 }
