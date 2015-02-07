@@ -4,9 +4,11 @@
 #define LED_PIN 13
 #define ON_PIN 15
 #define INTENSITY_PIN 16
+#define STATUS_PIN 17
+
 #define FIRE_PIN 3
-#define STATUS_PIN 4
-#define FIRE_INTENSITY_PIN 5
+#define FIRE_INTENSITY_PIN 4
+
 #define BLINK 50
 #define PIXELS 8
 
@@ -26,7 +28,6 @@ void setup()
   status.begin();
   status.setPixelColor(0, 255, 0, 255);
   status.show();
-  Serial.begin(9600);
 }
 
 void loop()
@@ -34,10 +35,9 @@ void loop()
   fire = digitalRead(ON_PIN);
   digitalWrite(LED_PIN, fire);
   digitalWrite(FIRE_PIN, fire);
-  intensity = analogRead(INTENSITY_PIN) / 3;
+  //by 3 rather than four to scale up to 5V from 3.3V tinyG
+  intensity = (analogRead(INTENSITY_PIN) / 3);
   analogWrite(FIRE_INTENSITY_PIN, intensity);
-  Serial.println(intensity);
-  Serial.println(' ');
   unsigned long current = millis();
 
   if (current - last > BLINK) {
