@@ -9,58 +9,59 @@ $sv=1
 $gpl=0
 $gun=1
 
-$1ma=1
+$1ma=0
 $1sa=1.8
-$1tr=37.391
+$1tr=4.0
 $1mi=8
-$1po=0
+$1po=1
 $1pm=2
 
 $2ma=1
 $2sa=1.8
-$2tr=37.391
+$2tr=4.0
 $2mi=8
 $2po=1
 $2pm=2
 
-$3ma=0
+$3ma=2
 $3sa=1.8
-$3tr=37.391
+$3tr=4.0
 $3mi=8
-$3po=1
+$3po=0
 $3pm=2
 
-$4ma=2
+$4ma=4
 $4sa=1.8
-$4tr=8
+$4tr=4.0
 $4mi=8
 $4po=1
 $4pm=2
 
-$xvm=5000
-$xfr=2000
+$xvm=1500
+$xfr=1500
 $xsv=1500
 $xtm=1220
-$xjm=50
-$xjh=50
+$xjm=10
+$xjh=10
 $xsn=3
 $xsx=2
 
-$yvm=5000
-$yfr=2000
+$yvm=1500
+$yfr=1500
 $ytm=2680
 $ysv=1500
-$yjm=50
-$yjh=50
+$yjm=10
+$yjh=10
 $ysn=3
 $ysx=2
 
-$zvm=1000
-$zfr=1000
+$zvm=500
+$zfr=500
+$zsv=500
 $ztm=60
-$zjm=50
-$zjh=50
-$zsn=0
+$zjm=10
+$zjh=10
+$zsn=1
 $zsx=0
 
 $asx=2
