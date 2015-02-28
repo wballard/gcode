@@ -27,44 +27,46 @@ $3ma=2
 $3sa=1.8
 $3tr=4.0
 $3mi=8
-$3po=0
+$3po=1
 $3pm=2
 
 $4ma=4
 $4sa=1.8
 $4tr=4.0
 $4mi=8
-$4po=1
+$4po=0
 $4pm=2
 
-$xvm=1500
-$xfr=1500
-$xsv=1500
-$xtm=1220
-$xjm=10
-$xjh=10
+$xvm=2000
+$xfr=2000
+$xsv=500
+$xtm=400
+$xjm=20
+$xjh=20
 $xsn=3
 $xsx=2
 
-$yvm=1500
-$yfr=1500
-$ytm=2680
-$ysv=1500
-$yjm=10
-$yjh=10
+$yvm=2000
+$yfr=2000
+$ysv=500
+$ytm=600
+$yjm=20
+$yjh=20
 $ysn=3
 $ysx=2
 
 $zvm=500
 $zfr=500
-$zsv=500
+$zsv=100
 $ztm=60
 $zjm=10
 $zjh=10
 $zsn=1
 $zsx=0
+$zlb=0
 
-$asx=2
+$asx=0
+$asn=2
 
 
 $p1frq=1000
