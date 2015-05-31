@@ -37,26 +37,26 @@ $4mi=8
 $4po=0
 $4pm=2
 
-$xvm=2000
-$xfr=2000
-$xsv=500
+$xvm=400
+$xfr=400
+$xsv=400
 $xtm=400
 $xjm=20
 $xjh=20
 $xsn=3
 $xsx=2
 
-$yvm=2000
-$yfr=2000
-$ysv=500
+$yvm=400
+$yfr=400
+$ysv=400
 $ytm=600
 $yjm=20
 $yjh=20
 $ysn=3
 $ysx=2
 
-$zvm=500
-$zfr=500
+$zvm=400
+$zfr=400
 $zsv=100
 $ztm=60
 $zjm=10
