@@ -3,7 +3,7 @@ all: NutHoleTableTop.gcode WasherHoleTableTop.gcode BoltHoleTableTop.gcode
 	echo $?
 	cat $? | sed s/M30// >	 scratch.gcode
 
-TABLE=json-range 0 100 1200 0 100 2300
+TABLE=json-range 100 100 1100 100 100 2300
 
 NutHoleTableTop.gcode:
 	$(TABLE) | mustache - NutHole.mustache > $@
