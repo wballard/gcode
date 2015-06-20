@@ -2,3 +2,4 @@
 AutoSave_*.skp
 node_modules/
 laser/controller/.build
+scratch.gcode
