@@ -1,21 +1,20 @@
-%
-(Bit diameter: 6.0mm)
-(Feed rate: 150.0mm/min)
-G90 G21 G49
-M3 S20000
+(Bit diameter: 6.35mm)
+G90 G21
+G0 Z20
+
+M3 S15000
+G4 P10
 
 {{#.}}
-G10 P2 L20 X-{{x}} Y-{{y}}
-G55
-G0   Z15.0 X6.0 Y6.0
-G1   Z-14.0     F150
-G0   Z15.0
-G53
+G53 G0 X{{x}} Y{{y}}
+G10 P1 L20 X0 Y0
+G54
+G0   X6.0 Y6.0
+G1   Z-28.0 F150
+G0   Z20
 {{/.}}
 
-
-
-G0 X0 Y0 (home)
 M05
+
+G53 G0 X0 Y0 (home)
 M30
-%
