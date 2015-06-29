@@ -30,3 +30,6 @@ VacuumTableMinor.gcode:
 
 VacuumTableAir.gcode:
 	$(VACUUM_TABLE_AIR) | mustache - VacuumAirPort.mustache > $@
+
+VacuumTableGrill.gcode:
+	../bin/vacuum-grill.litcoffee > $@
