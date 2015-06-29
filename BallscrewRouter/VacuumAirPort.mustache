@@ -1,20 +1,16 @@
 (Bit diameter: 6.0mm > )
-G90 G21
+G90 G21 G17
 G0 Z20
 
 M3 S15000
-G4 P1
+G4 P10
 
 {{#.}}
 G53 G0 X{{x}} Y{{y}}
-G10 P1 L20 X0 Y0
-G54
-G0 X-29 Y6
 G1 Z-14 F150
-G2 I35
+G53 G2 I35 F300
 G0 Z20
 {{/.}}
-
 
 M05
 
