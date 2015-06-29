@@ -1,6 +1,7 @@
 
 
 TABLE=json-range 100 100 1100 100 100 2000
+TABLEDRILL=json-range 106 100 1106 106 100 2006
 VACUUM_TABLE_MAJOR=json-range 65 100 1100 100 100 500
 VACUUM_TABLE_MINOR=json-range 115 100 1100 150 100 500
 VACUUM_TABLE_AIR=json-range 215 100 350 250 100 350
@@ -19,7 +20,7 @@ WasherHoleTableTop.gcode:
 	$(TABLE) | mustache - WasherHole.mustache > $@
 
 BoltHoleTableTop.gcode:
-	$(TABLE) | mustache - BoltHole.mustache > $@
+	$(TABLEDRILL) | mustache - BoltHole.mustache > $@
 
 VacuumTableMajor.gcode:
 	$(VACUUM_TABLE_MAJOR) | mustache - VacuumCircle.mustache > $@
