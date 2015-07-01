@@ -12,25 +12,22 @@ Generate a grid of grids to drill a grill.
         y += yStep
 
     console.log """
-    (Bit diameter: 3mm)
     G90 G21
     G0 Z4
     G53 G0 X0 Y0
     G10 P1 L20 X0 Y0
     G54
-    M3 S15000
+    M3 S10000
     G4 P10
+    ?
     """
-    iterate 100, 100, 1100, 100, 100, 600, (x, y) ->
-      console.log "G53 G0 X#{x} Y#{y}"
-      console.log "G10 P1 L20 X0 Y0"
-      iterate 10, 5, 90, 10, 5, 90, (x, y) ->
-        console.log "G0 X#{x} Y#{y}"
-        console.log "G1 Z-14 F150"
+    iterate 100, 100, 1100, 100, 100, 600, (xMajor, yMajor) ->
+      iterate 10, 5, 100, 10, 5, 100, (x, y) ->
+        console.log "G0 X#{x + xMajor} Y#{y + yMajor}"
+        console.log "G1 Z-14 F300"
         console.log "G0 Z4"
 
     console.log """
     M05
     G53 G0 X0 Y0 (home)
-    M3
     """
