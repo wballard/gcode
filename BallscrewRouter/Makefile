@@ -5,9 +5,9 @@ TABLEDRILL=json-range 106 100 1106 106 100 2006
 VACUUM_TABLE_MAJOR=json-range 65 100 1100 100 100 500
 VACUUM_TABLE_MINOR=json-range 115 100 1100 150 100 500
 VACUUM_TABLE_AIR=json-range 215 100 350 250 100 350
+TABLE_LEVEL=json-range 1 1 1 0 18 2060
 
-all: NutHoleTableTop.gcode WasherHoleTableTop.gcode BoltHoleTableTop.gcode VacuumTableMajor.gcode VacuumTableMinor.gcode VacuumTableAir.gcode
-	cat $? | sed s/M30// >	 scratch.gcode
+all: NutHoleTableTop.gcode WasherHoleTableTop.gcode BoltHoleTableTop.gcode VacuumTableMajor.gcode VacuumTableMinor.gcode VacuumTableAir.gcode VacuumTable.gcode TableLevel.gcode
 
 VacuumTable.gcode: VacuumTableMajor.gcode VacuumTableMinor.gcode VacuumTableAir.gcode
 	cat $? | sed s/M30// > $@
@@ -33,3 +33,6 @@ VacuumTableAir.gcode:
 
 VacuumTableGrill.gcode:
 	../bin/vacuum-grill.litcoffee > $@
+
+TableLevel.gcode:
+	$(TABLE_LEVEL) | mustache - TableLevel.mustache > $@
