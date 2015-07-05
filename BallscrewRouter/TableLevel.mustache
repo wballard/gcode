@@ -1,0 +1,23 @@
+(Bit diameter: 6.35mm)
+G90 G21
+G0 Z10
+G53 G0 X0 Y0
+G10 P1 L20 X0 Y0
+G54
+M3 S20000
+G4 P20
+
+{{#.}}
+G1 X0 Y{{y}} F500
+G1 Z-0 F200
+G1 X1235 Y{{y}} F500
+{{/.}}
+
+G1 X1238
+G1 Y0
+
+G0 Z10
+M05
+
+G53 G0 X0 Y0 (home)
+M30
