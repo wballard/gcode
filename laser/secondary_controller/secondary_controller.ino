@@ -14,10 +14,21 @@
 #define NEOPIXEL_PIN 3
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(8, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
-//PWM read back from the laser activation
-#define LASER_INTENSITY 0
+//main interior lights
+#define MAIN_RED 11
+#define MAIN_GREEN 10
+#define MAIN_BLUE 9
 
-int loopCount = 0;
+//PWM read back from the laser activation
+#define LASER_INTENSITY A0
+
+int powerLevel = -1;
+
+#define UNKNOWN -1
+#define OPEN HIGH
+#define CLOSED LOW
+int hood = UNKNOWN;
+int hoodSwitch = UNKNOWN;
 
 void setup() {
 
@@ -28,45 +39,93 @@ void setup() {
   pinMode(E1, OUTPUT);
   pinMode(E2, OUTPUT);
 
+  pinMode(MAIN_RED, OUTPUT);
+  pinMode(MAIN_GREEN, OUTPUT);
+  pinMode(MAIN_BLUE, OUTPUT);
+
+  pinMode(LASER_INTENSITY, INPUT);
+
   strip.begin();
+  //doesn't appear that enough power is available
+  strip.setBrightness(192);
   strip.show();
+  Serial.begin(9600);
 }
 
 void loop() {
   //tight loop since we are doing neopixels, not bothering with interrupts
 
-  int level = analogRead(LASER_INTENSITY) / (1024 / 8);
-
   //motor control here, switch on -- open the hood, switch off -- close it
   //counting on the limit switch stops in the linear motors for the hood
   int hoodSwitch = digitalRead(HOOD_SWITCH_PIN);
-  //high switch is open
-  if (hoodSwitch == HIGH) {
-    //close em!
-    digitalWrite(M1, HIGH);
-    digitalWrite(M2, HIGH);
-    digitalWrite(E1, HIGH);
-    digitalWrite(E2, HIGH);
-    //white lights indicate the hood is open and the system is safe
-    for(uint16_t i=0; i<strip.numPixels(); i++) {
-      strip.setPixelColor(i, 254, 254, 254);
+
+  //an open hood switch, let's see if we should fire up opening the hood.
+  if (hoodSwitch == OPEN) {
+    //only on a state change
+    if (hood != hoodSwitch) {
+      //close em!
+      digitalWrite(M1, HIGH);
+      digitalWrite(M2, HIGH);
+      digitalWrite(E1, HIGH);
+      digitalWrite(E2, HIGH);
+      //white lights indicate the hood is open and the system is safe
+      for(uint16_t i=0; i<strip.numPixels(); i++) {
+        strip.setPixelColor(i, 255, 255, 255);
+      }
+      digitalWrite(MAIN_RED, 0);
+      digitalWrite(MAIN_GREEN, 0);
+      digitalWrite(MAIN_BLUE, 0);
+      hood = OPEN;
+      strip.show();
     }
   } else {
-    //open em!
-    digitalWrite(M1, LOW);
-    digitalWrite(M2, LOW);
-    digitalWrite(E1, HIGH);
-    digitalWrite(E2, HIGH);
-    //red light indicate the hood is closed and lasing can happen
-    //laser strength indicator the neopixels like a graphical equalizer, dialing
-    //up the red to full intensity based on laser strength
-    for(uint16_t i=0; i<strip.numPixels(); i++) {
-      strip.setPixelColor(i, (i <= level && level) ? 255 : 127, 0, 0);
+    //only on a state change
+    if (hood != hoodSwitch) {
+      //open em!
+      digitalWrite(M1, LOW);
+      digitalWrite(M2, LOW);
+      digitalWrite(E1, HIGH);
+      digitalWrite(E2, HIGH);
+      hood = CLOSED;
+      powerLevel = UNKNOWN;
     }
   }
-  if (loopCount++ % 1000 == 0) {
-    loopCount = 0;
-    strip.show();
+  //closed hood switch, need to monitor power levels
+  if (hood == CLOSED) {
+    int level = floor(readPWM(LASER_INTENSITY) * strip.numPixels());
+    Serial.println(level);
+    if (powerLevel != level) {
+      powerLevel = level;
+      //red light indicate the hood is closed and lasing can happen
+      //laser strength indicator the neopixels like a graphical equalizer, dialing
+      //up the red to full intensity based on laser strength
+      for(uint16_t i=0; i<strip.numPixels(); i++) {
+        if (i < level && level) {
+          strip.setPixelColor(i, 255, 0, 0);
+        } else {
+          strip.setPixelColor(i, 32, 0, 0);
+        }
+      }
+      strip.show();
+      digitalWrite(MAIN_RED, 0);
+      digitalWrite(MAIN_GREEN, 1);
+      digitalWrite(MAIN_BLUE, 1);
+    }
   }
+}
+//Takes in reading pins and outputs pwm frequency and duty cycle.
+double readPWM(int readPin){
+  int highTime = 0;
+  int lowTime = 0;
 
+  int highpulse = pulseIn(readPin,HIGH);
+  int lowpulse = pulseIn(readPin,LOW);
+  if (highpulse == 0 && lowpulse == 0) {
+    if (analogRead(readPin)) {
+      return 1.0;
+    } else {
+      return 1.0;
+    }
+  }
+  return (highpulse/(double (lowpulse+highpulse)));
 }
