@@ -49,7 +49,6 @@ void setup() {
   //doesn't appear that enough power is available
   strip.setBrightness(192);
   strip.show();
-  Serial.begin(9600);
 }
 
 void loop() {
@@ -93,7 +92,6 @@ void loop() {
   //closed hood switch, need to monitor power levels
   if (hood == CLOSED) {
     int level = floor(readPWM(LASER_INTENSITY) * strip.numPixels());
-    Serial.println(level);
     if (powerLevel != level) {
       powerLevel = level;
       //red light indicate the hood is closed and lasing can happen
@@ -121,10 +119,11 @@ double readPWM(int readPin){
   int highpulse = pulseIn(readPin,HIGH);
   int lowpulse = pulseIn(readPin,LOW);
   if (highpulse == 0 && lowpulse == 0) {
-    if (analogRead(readPin)) {
+    //little noise check
+    if (analogRead(readPin) && analogRead(readPin) && analogRead(readPin)) {
       return 1.0;
     } else {
-      return 1.0;
+      return 0.0;
     }
   }
   return (highpulse/(double (lowpulse+highpulse)));
