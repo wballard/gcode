@@ -1,4 +1,3 @@
-#include <Adafruit_NeoPixel.h>
 
 //read the hood open/close on pin 2, this is a switch to ground
 #define HOOD_SWITCH_PIN 2
@@ -9,10 +8,6 @@
 #define M1 4
 #define E2 6
 #define M2 7
-
-//neopixel status indicator connect the neopixel to pin 3
-#define NEOPIXEL_PIN 3
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(8, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
 //main interior lights
 #define MAIN_RED 11
@@ -44,11 +39,6 @@ void setup() {
   pinMode(MAIN_BLUE, OUTPUT);
 
   pinMode(LASER_INTENSITY, INPUT);
-
-  strip.begin();
-  //doesn't appear that enough power is available
-  strip.setBrightness(192);
-  strip.show();
 }
 
 void loop() {
@@ -68,14 +58,10 @@ void loop() {
       digitalWrite(E1, HIGH);
       digitalWrite(E2, HIGH);
       //white lights indicate the hood is open and the system is safe
-      for(uint16_t i=0; i<strip.numPixels(); i++) {
-        strip.setPixelColor(i, 255, 255, 255);
-      }
       digitalWrite(MAIN_RED, 0);
       digitalWrite(MAIN_GREEN, 0);
       digitalWrite(MAIN_BLUE, 0);
       hood = OPEN;
-      strip.show();
     }
   } else {
     //only on a state change
@@ -91,23 +77,21 @@ void loop() {
   }
   //closed hood switch, need to monitor power levels
   if (hood == CLOSED) {
-    int level = floor(readPWM(LASER_INTENSITY) * strip.numPixels());
+    int level = readPWM(LASER_INTENSITY) / 10;
     if (powerLevel != level) {
       powerLevel = level;
-      //red light indicate the hood is closed and lasing can happen
-      //laser strength indicator the neopixels like a graphical equalizer, dialing
-      //up the red to full intensity based on laser strength
-      for(uint16_t i=0; i<strip.numPixels(); i++) {
-        if (i < level && level) {
-          strip.setPixelColor(i, 255, 0, 0);
-        } else {
-          strip.setPixelColor(i, 32, 0, 0);
-        }
+      //red light indicate the hood is closed and lasing is going
+      //green light indicate the hood is closed and no lasing
+      if (level) {
+        analogWrite(MAIN_RED, 255 - (level * 25));
+        analogWrite(MAIN_GREEN, 255);
+        analogWrite(MAIN_BLUE, 255);
+      } else {
+        analogWrite(MAIN_RED, 255);
+        analogWrite(MAIN_GREEN, 32);
+        analogWrite(MAIN_BLUE, 255);
       }
-      strip.show();
-      digitalWrite(MAIN_RED, 0);
-      digitalWrite(MAIN_GREEN, 1);
-      digitalWrite(MAIN_BLUE, 1);
+
     }
   }
 }
