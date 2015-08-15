@@ -15,8 +15,8 @@ Mask out the TV with 135,270,1525,1080 mm so in 20mm cells with a 20mm border
 Mask out the sound bar with 5,16,12,66
 
 Panel is turned on its side compared to the TV
-./bin/mazecarver 1220 1660 12.7 61 83 12,6,54,76 5,16,12,66  > ../gcode/tv-surround/left.gcode
-./bin/mazecarver 1220 1660 12.7 61 83 12,6,54,76 > ../gcode/tv-surround/right.gcode
+./bin/mazecarver 1220 1500 12.7 61 75 12,2,54,72 5,12,12,62  > ../gcode/tv-surround/left.gcode
+./bin/mazecarver 1220 1500 12.7 61 75 12,2,54,72 > ../gcode/tv-surround/right.gcode
 ./bin/mazecarver 1220 610 12.7 60 30 > ../gcode/tv-surround/a.gcode
 ./bin/mazecarver 1220 610 12.7 60 30 > ../gcode/tv-surround/b.gcode
 ./bin/mazecarver 1220 610 12.7 60 30 > ../gcode/tv-surround/c.gcode

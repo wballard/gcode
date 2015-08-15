@@ -1,22 +1,19 @@
 G90 G21
 G0 Z10
-M3 S22000
+M3 S5000
 
 {{#.}}
 {{#even}}
-G1 X0 Y{{y}} F500
-G1 Z-0.2 F200
-G1 X{{xStep}} Y{{y}} F500
+G1 X0 Y{{y}} F2000
+G1 Z-0.0
+G1 X{{xStep}} Y{{y}} F2000
 {{/even}}
 {{^even}}
-G1 X{{xStep}} Y{{y}} F500
-G1 Z-0.2 F200
-G1 X0 Y{{y}} F500
+G1 X{{xStep}} Y{{y}} F2000
+G1 Z-0.0
+G1 X0 Y{{y}} F2000
 {{/even}}
 {{/.}}
-
-G1 X{{xStep}}
-G1 Y0
 
 G0 Z10
 M05
