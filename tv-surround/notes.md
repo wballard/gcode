@@ -21,3 +21,5 @@ Panel is turned on its side compared to the TV
 ./bin/mazecarver 1200 600 12.7 60 30 > ../gcode/tv-surround/b.gcode
 ./bin/mazecarver 1200 600 12.7 60 30 > ../gcode/tv-surround/c.gcode
 ./bin/mazecarver 200 200 12.7 10 10 > ../gcode/tv-surround/tile.gcode
+
+./bin/panelcarver 480 1400 12.7 24 > ~/git/wballard/gcode/tv-surround/middle.gcode
