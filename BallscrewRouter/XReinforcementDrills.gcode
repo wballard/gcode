@@ -1,8 +1,8 @@
 (Cutter: 5mm)
 G0Z20
-M3S8000
-G04P10
 G0X0Y0
+M3S9000
+G04P10
 
 (Straight drill the mount holes)
 (Panel is mounted Y as the long axis)
