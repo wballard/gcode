@@ -4,14 +4,14 @@ M3 S5000
 
 {{#.}}
 {{#even}}
-G1 X0 Y{{y}} F2000
+G1 X0 Y{{y}} F3000
 G1 Z-0.0
-G1 X{{xStep}} Y{{y}} F2000
+G1 X{{xStep}} Y{{y}} F3000
 {{/even}}
 {{^even}}
-G1 X{{xStep}} Y{{y}} F2000
+G1 X{{xStep}} Y{{y}} F3000
 G1 Z-0.0
-G1 X0 Y{{y}} F2000
+G1 X0 Y{{y}} F3000
 {{/even}}
 {{/.}}
 
