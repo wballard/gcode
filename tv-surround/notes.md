@@ -14,12 +14,17 @@ Mask out the TV with 135,270,1525,1080 mm so in 20mm cells with a 20mm border
 
 Mask out the sound bar with 5,16,12,66
 
-Panel is turned on its side compared to the TV
+Panel is turned on its side compared to the TV, this was done with a prior
+version of gcodelines which did an outline cut.
 ./bin/mazecarver 1200 1680 12.7 60 84 13,7,53,76 6,17,12,66  > ../gcode/tv-surround/left.gcode
 ./bin/mazecarver 1200 1680 12.7 60 84 13,7,53,76 > ../gcode/tv-surround/right.gcode
-./bin/mazecarver 1200 600 12.7 60 30 > ../gcode/tv-surround/a.gcode
-./bin/mazecarver 1200 600 12.7 60 30 > ../gcode/tv-surround/b.gcode
-./bin/mazecarver 1200 600 12.7 60 30 > ../gcode/tv-surround/c.gcode
-./bin/mazecarver 200 200 12.7 10 10 > ../gcode/tv-surround/tile.gcode
-
 ./bin/panelcarver 480 1400 12.7 24 > ~/git/wballard/gcode/tv-surround/middle.gcode
+
+Secondary wall hanging
+./bin/mazecarver 1200 600 9 40 20 > ../gcode/tv-surround/a.gcode
+./bin/mazecarver 1200 600 9 40 20 > ../gcode/tv-surround/b.gcode
+./bin/mazecarver 1200 600 9 40 20 > ../gcode/tv-surround/c.gcode
+
+
+Testing
+./bin/mazecarver 200 200 12.7 10 10 > ../gcode/tv-surround/tile.gcode
