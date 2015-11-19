@@ -20,11 +20,16 @@ version of gcodelines which did an outline cut.
 ./bin/mazecarver 1200 1680 12.7 60 84 13,7,53,76 > ../gcode/tv-surround/right.gcode
 ./bin/panelcarver 480 1400 12.7 24 > ~/git/wballard/gcode/tv-surround/middle.gcode
 
-Secondary wall hanging
-./bin/mazecarver 1200 600 9 40 20 > ../gcode/tv-surround/a.gcode
-./bin/mazecarver 1200 600 9 40 20 > ../gcode/tv-surround/b.gcode
-./bin/mazecarver 1200 600 9 40 20 > ../gcode/tv-surround/c.gcode
+Secondary wall hanging:
+  ./bin/mazecarver 1200 600 9 40 20 > ../gcode/tv-surround/a.gcode
+  ./bin/mazecarver 1200 600 9 40 20 > ../gcode/tv-surround/b.gcode
+  ./bin/mazecarver 1200 600 9 40 20 > ../gcode/tv-surround/c.gcode
 
+  Inset the cutter 20mm on the X to allow flipping these and having
+  centered margins.
+
+  ./bin/panelcarver 1200 330 9 40 > ../gcode/tv-surround/a-b.gcode
+  ./bin/panelcarver 1200 350 9 40 > ../gcode/tv-surround/b-c.gcode
 
 Testing
 ./bin/mazecarver 200 200 12.7 10 10 > ../gcode/tv-surround/tile.gcode
