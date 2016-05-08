@@ -7,15 +7,15 @@
 // Length of holder (mm)
 length = 7;
 // Diameter of holder
-diameter = 4;  //  [2:30]
+diameter = 3.5;  //  [2:30]
 // Thickness of holder wall (mm) [not affects mount legs]
-thickness = 1.2;  // [0.6:0.2:3.6]
+thickness = 1.5;  // [0.6:0.2:3.6]
 // Make or not the gap in circle
 gap = 1;  // [1:Yes, 0:No]
 // Gap size [not accurate)
-gap_size = 3;  // [1:0.5:25]
+gap_size = 2.5;  // [1:0.5:25]
 // Direction of the gap (0: Bottom, 90: Side, 180: Top)
-gap_angle = 60; // [0:5:180]
+gap_angle = 90; // [0:5:180]
 
 /* [Misc] */
 
