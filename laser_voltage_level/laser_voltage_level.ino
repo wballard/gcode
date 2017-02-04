@@ -12,7 +12,7 @@ void setup() {
 }
 
 int level(int val) {
-  return val / 4;
+  return (max(val - 30, 0) / 4);
 }
 
 void loop() {
